@@ -1,11 +1,16 @@
 import time
+import readfile
+
+
 class Priority:
     
     def processData(self, no_of_processes):
         process_data = []
-        for i in range(no_of_processes):
+        no_of_processes = readfile.get_num_of_processes()
+    
+        for i in range(int(no_of_processes)):
             temporary = []
-            process_id = int(input("Enter Process ID: "))
+            process_id = int(readfile.getID[i])
             arrival_time = int(input(f"Enter Arrival Time for Process {process_id}: "))
 
             burst_time = int(input(f"Enter Burst Time for Process {process_id}: "))
@@ -17,6 +22,8 @@ class Priority:
             '''
             process_data.append(temporary)
         Priority.schedulingProcess(self, process_data)
+    
+    
     def schedulingProcess(self, process_data):
         start_time = []
         exit_time = []
@@ -127,8 +134,8 @@ class Priority:
             for j in range(len(process_data[i])):
 
                 print(process_data[i][j], end="				")
-                milliseconds =int(round(time.time() * 1000))
-                print(milliseconds)
+                # milliseconds =int(round(time.time() * 1000))
+                # print(milliseconds)
             print()
 
         print(f'Average Turnaround Time: {average_turnaround_time}')
