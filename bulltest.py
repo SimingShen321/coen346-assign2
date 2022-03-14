@@ -5,3 +5,4 @@ for man in (str.split("\n")):
      #Split every record for attribute 
      name, given_name, age = man.split(",")
      print("Name: " + name + "| Given Name: " + given_name + "| Age: " + age)
+     
