@@ -1,0 +1,5 @@
+3	
+#id	    arrival time	burst	initial priority
+P1      1000            500     90
+P2      2000            100     120
+P3      2000            100     100

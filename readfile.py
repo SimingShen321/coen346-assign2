@@ -36,23 +36,24 @@ def getArrivaltime():
     arrival = []
     for i in range(2, len(flatten), 4):
         arrival.append(flatten[i])  
-    return arrival
+    return list(map(int, arrival))
 
 def getBursttime():
     flatten = [item for sublist in getwords() for item in sublist]  
     burst = []
     for i in range(3, len(flatten), 4):
         burst.append(flatten[i]) 
-    return burst
+    return list(map(int, burst))
         
 def getPriority():
     flatten = [item for sublist in getwords() for item in sublist]  
     initialPriority = []
     for i in range(4, len(flatten), 4):
         initialPriority.append(flatten[i])   
-    return initialPriority  
+    return list(map(int, initialPriority))
            
-            
+
+
     
    
 
@@ -61,7 +62,7 @@ def getPriority():
         
 
     
-    
+
 
 
  

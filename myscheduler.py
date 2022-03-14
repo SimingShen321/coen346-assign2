@@ -11,7 +11,6 @@ class Priority:
         
         for i in range(int(no_of_processes)):
             temporary = []
-            
             pid = []
             pid = readfile.getID()
             process_id = pid[i]
@@ -45,12 +44,6 @@ class Priority:
         '''
         Sort processes according to the Arrival Time
         '''
-
-
-
-
-
-
 
         while 1:
             ready_queue = []
@@ -137,15 +130,15 @@ class Priority:
 
 
     def printData(self, process_data, average_turnaround_time, average_waiting_time, sequence_of_process):
-        process_data.sort(key=lambda x: x[0])
+        process_data.sort(key = lambda x: x[0])
         '''
         Sort processes according to the Process ID
         '''
-        print("Process_ID  Arrival_Time  Rem_Burst_Time   Priority        Completed  Orig_Burst_Time Completion_Time  Turnaround_Time  Waiting_Time")
+        print("Process_ID\tArrival_Time\tRem_Burst_Time\tPriority\tCompleted\tOrig_Burst_Time\tCompletion_Time\tTurnaround_Time\tWaiting_Time")
         for i in range(len(process_data)):
             for j in range(len(process_data[i])):
 
-                print(process_data[i][j], end="				")
+                print(process_data[i][j], end="\t")
                 # milliseconds =int(round(time.time() * 1000))
                 # print(milliseconds)
             print()
