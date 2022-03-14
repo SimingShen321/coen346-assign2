@@ -7,15 +7,27 @@ class Priority:
     def processData(self, no_of_processes):
         process_data = []
         no_of_processes = readfile.get_num_of_processes()
-    
+        
+        
         for i in range(int(no_of_processes)):
             temporary = []
-            process_id = int(readfile.getID[i])
-            arrival_time = int(input(f"Enter Arrival Time for Process {process_id}: "))
-
-            burst_time = int(input(f"Enter Burst Time for Process {process_id}: "))
-
-            priority = int(input(f"Enter Priority for Process {process_id}: "))
+            
+            pid = []
+            pid = readfile.getID()
+            process_id = pid[i]
+            
+            arvl = []
+            arvl = readfile.getArrivaltime()
+            arrival_time = arvl[i]
+            
+            brst = []
+            brst = readfile.getBursttime()
+            burst_time = brst[i]
+            
+            prio = []
+            prio = readfile.getPriority()
+            priority = prio[i]
+            
             temporary.extend([process_id, arrival_time, burst_time, priority, 0, burst_time])
             '''
             '0' is the state of the process. 0 means not executed and 1 means execution complete

@@ -55,12 +55,6 @@ def getPriority():
             
     
    
-a = getID()
-  
-print(getID())
-print(getArrivaltime())
-print(getBursttime())
-print(getPriority())
 
     
                    
