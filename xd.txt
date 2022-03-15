@@ -1,0 +1,58 @@
+
+
+q1 []
+q2 []
+
+func states
+	idle
+	start
+	paused
+	finished
+
+	
+class process 
+	
+	id
+	arrival 
+	burst
+	prio
+	
+	
+	set state
+	change state
+
+
+
+class schedule
+	determine time slice
+	
+	
+	set clock=-1
+	read state
+	if detects arrived it willdo something
+	arrival time=
+	if procs= arr+ curretn ttime 
+	if a process states its arrival 
+	
+	sleep for 100ms at somepoint	
+		
+	
+	
+	if idle
+	elif paused
+	elif resume
+	elif finished 
+
+	able to change state
+
+	https://www.geeksforgeeks.org/difference-between-preemptive-priority-based-and-non-preemptive-priority-based-cpu-scheduling-algorithms/
+
+
+
+
+
+
+
+
+
+class cock
