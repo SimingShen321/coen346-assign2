@@ -92,13 +92,25 @@ class Priority:
                 if process_data[k][2] == 0:        #if burst time is zero, it means process is completed
                     process_data[k][4] = 1
                     process_data[k].append(e_time)
+                
 
         Priority.printData(self, process_data, sequence_of_process)
+    
+    def calculateWaitingTime(self, process_data):
+        total_waiting_time = 0
+        for i in range(len(process_data)):
+            waiting_time = process_data[i][6] - process_data[i][2]
+            '''
+            waiting_time = turnaround_time - burst_time
+            '''
+            total_waiting_time = total_waiting_time + waiting_time
+            process_data[i].append(waiting_time)
+        average_waiting_time = total_waiting_time / len(process_data)
+        '''
+        average_waiting_time = total_waiting_time / no_of_processes
+        '''
+        return average_waiting_time
         
-
-
-
-
     def printData(self, process_data, sequence_of_process):
         process_data.sort(key = lambda x: x[0])
         '''
@@ -110,7 +122,7 @@ class Priority:
                 print(process_data[i][j], end="\t\t")
                
             print()
-
+        
         print(f'Sequence of Process: {sequence_of_process}')
 
 
