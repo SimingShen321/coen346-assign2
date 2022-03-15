@@ -8,7 +8,6 @@ class Priority:
         process_data = []
         no_of_processes = readfile.get_num_of_processes()
         
-        
         for i in range(int(no_of_processes)):
             temporary = []
             pid = []
@@ -46,6 +45,7 @@ class Priority:
         '''
 
         while 1:
+            
             ready_queue = []
             normal_queue = []
             temp = []
@@ -112,6 +112,7 @@ class Priority:
         return average_waiting_time
         
     def printData(self, process_data, sequence_of_process):
+        
         process_data.sort(key = lambda x: x[0])
         '''
         Sort processes according to the Process ID

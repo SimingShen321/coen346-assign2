@@ -25,15 +25,10 @@ class Priority:
         exit_time = []
         s_time = 0
         sequence_of_process = []
-        process_data.sort(key=lambda x: x[1])
+        process_data.sort(key = lambda x: x[1])
         '''
         Sort processes according to the Arrival Time
         '''
-
-
-
-
-
 
 
         while 1:
@@ -94,7 +89,6 @@ class Priority:
         Priority.printData(self, process_data, t_time, w_time, sequence_of_process)
         
 
-
     def calculateTurnaroundTime(self, process_data):
         total_turnaround_time = 0
         for i in range(len(process_data)):
@@ -124,10 +118,6 @@ class Priority:
         average_waiting_time = total_waiting_time / no_of_processes
         '''
         return average_waiting_time
-
-
-
-
 
 
     def printData(self, process_data, average_turnaround_time, average_waiting_time, sequence_of_process):
