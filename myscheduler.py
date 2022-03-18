@@ -19,6 +19,7 @@ class Priority:
             arrival_time = arvl[i]
             
             brst = []
+            
             brst = readfile.getBursttime()
             burst_time = brst[i]
             
