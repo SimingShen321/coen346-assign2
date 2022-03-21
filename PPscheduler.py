@@ -4,53 +4,68 @@ import readfile
 import threading
 from time import sleep
 from collections import deque
+import process
+from queue import PriorityQueue
+import clock
 
-#prearrivalQ=[].... this would hole the processes before they arrived 
+#prearrivalQ=[].... this would hold the processes before they arrived 
 
-queue1=[]
-queue2=[]
+# queue1=[]
+# queue2=[]
 
 class scheduler(threading.Thread):
+
+    queue1=[]
+    queue2=[]
     
-    def timeSlot(self, priority):
-        prio = priority       
-        timeSlice=0
-        
-        if prio >100:
-            timeSlice=(140-prio)*20
-        else:
-            timeSlice=(140-prio)*5
+   
+
+    # #def updatePriority(self, priority):
+
     
-        return timeSlice
 
 
 
-
-    def run():
+    def algo():
 
         queue1=True
 
         while True:
+            index1=len(queue1)
+            index2=len(queue2)
 
-            if :
-                #determines the false/true q and sorts elements depending on their priority 
+            #check for new process
 
+           
+            if  # a new PID is arrived it will be  added  to q in process class but will be handeled here:
+               
+                
 
-            elif:
+                if queue1 == False:
+                    queue1.append(x)
+                    
+                if queue2 == False:
+                    queue2.append(x)
                 #if there is an element that arrives puts in the false q (expired q)  
-                #
+                #organize  the q based on prio
 
 
             elif queue1 != 0 and  queue1 == True:
-                #queue1 manipulate element [0] to do a timeslice 
-                # if hte element is paused  then resume
-                #queue1.pop[0] 
                 
+                highestPrioProcess= max(queue1, key=lambda item: item[3]) #takes element with highest prio
+                
+                #x set state either start or resume
+                #queue1 manipulate element maxprio element to do a timeslice 
+                # if hte element is paused  then resume and update its priority
+                #update its state
+                #queue1.pop[0] to q2 if not finished pop out to oblivion if done
                 #do timeslice and pauses PID
                 
                 
                 if queue1.empty():
                     queue1=False
+                    if queue2 != 0:
+                        queue2 = True
                 #empty make it false and q 2 true 
 
                 
@@ -63,6 +78,10 @@ class scheduler(threading.Thread):
 
 
             elif queue2 !=0 and queue2 == True:
+               
+               
+                highestPrioProcess= max(queue2, key=lambda item: item[3])
+
                 queue2.popleft()   
                 
                 
@@ -74,19 +93,11 @@ class scheduler(threading.Thread):
                 break
 
 
-            
-        
 
 
 
 
 
-
-
-
-
-
-#boolean flag for active
 #q class that inherits q
 #override run method
 #
